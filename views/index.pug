@@ -1,0 +1,10 @@
+extends layout
+//- #{data_sent}
+//- each temp, i in array_of_datasent , i in doesnt mean anything extra just iteration
+//- tag= <thing you want to render>
+block content    
+  h1 #{title}
+  ul.list-group
+    each article, i in articles
+      li.list-group-item
+        a(href="/articles/"+article._id)= article.title

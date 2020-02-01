@@ -1,0 +1,15 @@
+extends layout
+//- attributes are in the brackets comma separated
+block content    
+  h1 #{title}
+  form(method='POST' action='/articles/edit/'+article._id)
+    #form-group
+      label Title:  
+      input.form-control(name='title' type='text' value=article.title)
+    #form-group
+      label Auther:  
+      input.form-control(name='auther' type='text' placeholder=article.auther value = article.auther disabled='')
+    #form-group
+      label Body:  
+      textarea.form-control(name='body')= article.body
+    input.btn.btn-primary(type='submit' value = 'Submit')
